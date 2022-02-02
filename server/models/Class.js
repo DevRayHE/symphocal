@@ -13,8 +13,12 @@ const classSchema = new Schema({
     required: true,
     trim: true
   },
-  classDateTime: {
-    type: Date,
+  date: {
+    type: String,
+    required: true
+  },
+  startTime: {
+    type: Number,
     required: true
   },
   duration: {
@@ -29,7 +33,11 @@ const classSchema = new Schema({
     type: Number, //  divide by 100 to get the actual cost, such as 35 will be stored as 3500
     required: true
   },
-  children: [
+  room: {
+    type: Number,
+    required: true
+  },
+  student: [
     {
       type: Schema.Types.ObjectId,
       ref: 'Student'
@@ -37,6 +45,6 @@ const classSchema = new Schema({
   ]
 });
 
-const Class = mongoose.model('Class', userSchema);
+const Class = mongoose.model('Class', classSchema);
 
 module.exports = Class;
