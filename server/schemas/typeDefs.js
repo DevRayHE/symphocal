@@ -39,6 +39,7 @@ const typeDefs = gql`
 
   type Query {
     classes: [Class]
+    student: [Student]
     user: User
   }
 

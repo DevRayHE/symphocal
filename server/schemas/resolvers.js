@@ -5,7 +5,10 @@ const { AuthenticationError } = require('apollo-server-express');
 const resolvers = {
   Query: {
     classes: async () => {
-      return await Class.find();
+      return await Class.find().populate('student');
+    },
+    student: async () => {
+      return await Student.find();
     },
     user: async (parent, args, context) => {
       if (context.user) {
