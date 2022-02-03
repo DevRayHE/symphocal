@@ -18,7 +18,7 @@ const classSchema = new Schema({
     required: true
   },
   startTime: {
-    type: Number,
+    type: String,
     required: true
   },
   duration: {

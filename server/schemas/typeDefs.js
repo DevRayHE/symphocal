@@ -24,7 +24,7 @@ const typeDefs = gql`
     name: String 
     description: String 
     date: String 
-    startTime: Int
+    startTime: String 
     duration: Int 
     capacity: Int 
     cost: Int 
