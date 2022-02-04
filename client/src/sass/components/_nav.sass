@@ -2,11 +2,11 @@
   $include: flexCenter
   height: $nav-height
   $include: backgroundBlack
-  background: black
+  background: $dark
 
   &__container
     $include: flexCenter
-    $include: backgroundBlack
+    // $include: backgroundBlack
 
 .nav-link:hover
 .contact-me-links a:hover,
@@ -14,7 +14,9 @@ button:hover,
 a:hover,
 #github:hover
   text-shadow: 0px 0px 8px #ffffff, 0 0 15px #ff6c6c
-  /* transition: all 0.3s ease-in-out; */
+  transition: all 0.2s ease-in-out
+  background: $orange
+  text: $light
 
 .collapse 
   // background: black
