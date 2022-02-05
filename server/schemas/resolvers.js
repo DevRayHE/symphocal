@@ -12,12 +12,15 @@ const resolvers = {
     },
     user: async (parent, args, context) => {
       if (context.user) {
-        const user = await User.findById(context.user._id).populate({
-          path: 'children',
-          populate: 'children'
-        });
+        // const user = await User.findById(context.user._id).populate({
+        //   path: 'children',
+        //   populate: 'children'
+        // });
 
-        return user;
+        // return user;
+
+        console.log("context.user is true!");
+        return await User.findOne({_id: context.user._id})
       }
 
       throw new AuthenticationError('Not logged in');

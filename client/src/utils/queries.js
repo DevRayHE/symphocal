@@ -1,31 +1,35 @@
 import { gql } from '@apollo/client';
 
-export const QUERY_CLASSES = gql`
-  classes() {
-    _id
-    name
-    description
-    date
-    startTime
-    duration
-    capacity
-    cost
-    room
-    student {
+export const QUERY_ALL_CLASSES = gql`
+  {
+    classes {
       _id
-      firstName
-      lastName
-      dateOfBirth
+      name
+      description
+      date
+      startTime
+      duration
+      capacity
+      cost
+      room
+      student {
+        _id
+        firstName
+        lastName
+        dateOfBirth
+      }
     }
   }
 `;
 
 export const QUERY_STUDENT = gql`
-  student() {
+  {
+    student {
     _id
     firstName
     lastName
     dateOfBirth
+    }
   }
 `;
 

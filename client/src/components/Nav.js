@@ -63,6 +63,16 @@ const Nav = ({
 								<h5>Signup</h5>
 							</Link>
 						</li>
+						<li className="nav-item">
+							<Link
+              className='nav-link'
+							// className={currentPage === 'Signup' ? 'nav-link active' : 'nav-link'} 
+							to="/Profile" 
+							// onClick={() => setPageChange('Signup')}
+              >
+								<h5>Profile</h5>
+							</Link>
+						</li>
             <li className="nav-item">
 							<Link
               className='nav-link'

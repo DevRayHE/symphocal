@@ -1,10 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { CREATE_USER } from '../utils/mutations';
+import { TOGGLE_SIGNUP } from '../utils/actions';
+import { useAppContext } from '../utils/GlobalState';
 
 function Signup(props) {
+  // get global state
+  const [ state, dispatch ] = useAppContext();
+
+  // check value of boolean variable isNewUser
+  // console.log("isNewUser status:" + state.isNewUser);
+
+  // function to toggle isNewUser global state, when true(on signup, will navigate to Profile page, add children(student))
+  // function toggleSignUp() {
+  //   console.log("toggleSignup Func activated!")
+  //   dispatch({ type: TOGGLE_SIGNUP })
+  //   console.log("isNewUser status:" + state.isNewUser)
+  // }
+
+  // useEffect(() => {
+  //   if (!isNewUser) {
+  //     dispatch({
+  //       type: TOGGLE_SIGNUP,
+  //       newUser: true,
+  //     })
+  //   } 
+  //   // else if ()
+
+  // }, [isNewUser, dispatch]); // effect will only activate if the values in the list change.
+
+  // console.log("newUser true or false after useEffct" + isNewUser)
+
+
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [createUser] = useMutation(CREATE_USER);
 
@@ -21,7 +50,8 @@ function Signup(props) {
       },
     });
     const token = mutationResponse.data.createUser.token;
-    Auth.login(token);
+    const isSignUp = true;
+    Auth.login(token, isSignUp);
   };
 
   const handleChange = (event) => {
@@ -98,8 +128,10 @@ function Signup(props) {
           />
         </div>
         <div className="flex-row flex-end">
+          {/* On submit of the form, toggle isNewUser global state variable to true, to navigate to Profile page instead of Calendar page, which is handled with ../utils/auth.js login method */}
           <button type="submit">Submit</button>
           <button><Link to="/login">Login</Link></button>
+          {/* <button><a href="#test" onClick={toggleSignUp}>Test</a></button> */}
         </div>
       </form>
     </div>
