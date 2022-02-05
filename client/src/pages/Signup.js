@@ -12,13 +12,15 @@ function Signup(props) {
     event.preventDefault();
     const mutationResponse = await createUser({
       variables: {
-        email: formState.email,
-        password: formState.password,
         firstName: formState.firstName,
         lastName: formState.lastName,
+        mobile: formState.mobile,
+        postCode: formState.postCode,
+        email: formState.email,
+        password: formState.password,
       },
     });
-    const token = mutationResponse.data.addUser.token;
+    const token = mutationResponse.data.createUser.token;
     Auth.login(token);
   };
 
@@ -96,8 +98,8 @@ function Signup(props) {
           />
         </div>
         <div className="flex-row flex-end">
-          <button><Link to="/login">Login</Link></button>
           <button type="submit">Submit</button>
+          <button><Link to="/login">Login</Link></button>
         </div>
       </form>
     </div>
