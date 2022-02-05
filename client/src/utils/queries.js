@@ -25,17 +25,18 @@ export const QUERY_ALL_CLASSES = gql`
 export const QUERY_STUDENT = gql`
   {
     student {
-    _id
-    firstName
-    lastName
-    dateOfBirth
+      _id
+      firstName
+      lastName
+      dateOfBirth
     }
   }
 `;
 
 export const QUERY_USER = gql`
-  {
+  query user {
     user {
+      _id
       firstName
       lastName
       mobile

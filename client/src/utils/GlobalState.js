@@ -7,7 +7,7 @@ const { Provider } = AppContext;
 const AppProvider = ({ value = [], ...props }) => {
   const  [state, dispatch] = useAppReducer({
     // isNewUser: Boolean,
-    user: {},
+    user: [],
     classes: [],
   });
 

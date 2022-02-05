@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { QUERY_ALL_CLASSES, QUERY_STUDENT, QUERY_USER } from '../utils/queries';
 import { UPDATE_CLASS } from '../utils/actions';
 import { useAppContext } from '../utils/GlobalState';
+import moment from 'moment';
 
 const Calendar = () => {
   const [ state, dispatch ] = useAppContext();
@@ -11,9 +12,9 @@ const Calendar = () => {
   const { classes, user } = state;
 
   // console.log("state classes:" + state.classes)
-  console.log("classes:" + classes);
+  console.log(classes);
   console.log("user:" + user);
-  console.log("user:" + user.firstName);
+  // console.log("user:" + user.firstName);
 
 
   const { loading, data: classData } = useQuery(QUERY_ALL_CLASSES);
@@ -35,7 +36,8 @@ const Calendar = () => {
     <div className="container">
       <h1> This is Calendar page</h1>
       {/* {loading ? <button>loading</button> : renderClasses() } */}
-      {classes.map((item) => (
+      {/* conditional rendering to avoid bugs */}
+      {classes ? classes.map((item) => (
       <button
         key={item._id}
         onClick={() => {
@@ -49,9 +51,22 @@ const Calendar = () => {
       {item.duration} || capacity:
       {item.capacity} || cost:
       {item.cost} || room:
-      {item.room}
+      {item.room} || Students:
+      {item.student.map((item) => (
+        <button
+        key={item._id}
+        onClick={() => {
+          // handleClick(item._id);
+        }}
+        > firstName: {item.firstName}
+        || lastName: {item.lastName}
+        || DOB: 
+        {/* {moment(item.dateOfBirth, "DD-MM-YYYY")} */}
+        {item.dateOfBirth}
+        </button>
+      ))}
       </button>
-    ))}
+    )) : <button>loading</button>}
     </div>
   );
 };

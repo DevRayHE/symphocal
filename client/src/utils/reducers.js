@@ -7,7 +7,8 @@ export const reducer = (state, action) => {
     // returns currnet logged in user's info
     case UPDATE_USER:
       return {
-
+        ...state,
+        user: action.user,
       };
 
     case UPDATE_CLASS:

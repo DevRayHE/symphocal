@@ -13,29 +13,28 @@ const Profile = () => {
   console.log(user);
 
   const { loading, data: userData } = useQuery(QUERY_USER);
-  // console.log("isNewUser status:" + state.isNewUser);
 
-  // if (state.isNewUser) {
-  //   console.log("state.isNewUser is true! switching it back to false!")
-  //   dispatch({ type: TOGGLE_SIGNUP })
-  // }
+  console.log("userData: " + userData);
 
-  // useEffect(() => {
-  //   if (userData) {
-  //     dispatch({
-  //       type: UPDATE_USER,
-  //       user: userData,
-  //     })
-  //   } 
-  //   // else if ()
+  useEffect(() => {
+    if (userData) {
+      dispatch({
+        type: UPDATE_USER,
+        user: userData.user,
+      })
+    } 
+    // else if ()
 
-  // }, [userData, loading, dispatch]); // effect will only activate if the values in the list change.
+  }, [userData, loading, dispatch]); // effect will only activate if the values in the list change.
 
-  // console.log("user after useEffct" + user)
+  console.log("user after useEffct" + user)
+
+  console.log("userData: " + userData);
 
   return (
     <div className="container">
-      <h1> This is Profile page</h1>
+      {userData ? <h1> Hello {userData.user.firstName} </h1> : <h1>loading</h1>}
+      {/* <h1> Hello {userData.firstName} </h1> */}
     </div>
   );
 };

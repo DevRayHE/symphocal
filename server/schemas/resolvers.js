@@ -17,10 +17,12 @@ const resolvers = {
         //   populate: 'children'
         // });
 
-        // return user;
+        const user = await User.findById(context.user._id)
+
+        return user;
 
         console.log("context.user is true!");
-        return await User.findOne({_id: context.user._id})
+        // return await User.findOne({_id: context.user._id})
       }
 
       throw new AuthenticationError('Not logged in');

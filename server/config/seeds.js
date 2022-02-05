@@ -8,17 +8,17 @@ db.once('open', async () => {
     {
       firstName: 'Quinton',
       lastName: 'He',
-      dateOfBirth: '2016-05-21'
+      dateOfBirth: '21-05-2016'
     },
     {
       firstName: 'Aria',
       lastName: 'He',
-      dateOfBirth: '2019-09-20'
+      dateOfBirth: '20-09-2019'
     },
     {
       firstName: 'Sande',
       lastName: 'Singh',
-      dateOfBirth: '2016-03-01'
+      dateOfBirth: '01-03-2016'
     }
   ]);
 
