@@ -4,6 +4,8 @@
 @import '~bootstrap/scss/bootstrap'
 @import 'base/base'
 
+@import '~foundation-sites/scss/util/mixins'
+
 // import abstracts
 @import 'abstracts/variables'
 @import 'abstracts/mixins'
@@ -21,3 +23,26 @@
 @import 'pages/home'
 @import 'pages/login'
 @import 'pages/signup'
+
+form
+  // @include absolute-center
+  // align-content: center
+
+.page__header
+  margin-bottom: 2rem
+  border-bottom-style: solid
+  border-width: 0.3rem
+  border-bottom-color: $dusk
+
+.container
+  display: block
+  text-align: center
+
+.mainContainer
+  @include flexCenter
+
+.button-group
+  // @include horizontalCenter
+  display: block
+  text-align: center
+  @include marginTopBottomFull

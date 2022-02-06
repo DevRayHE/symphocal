@@ -30,38 +30,50 @@ function Login(props) {
   };
 
   return (
-    <div className="container my-1">
-
-      <h2>Login</h2>
+    <div className="container">
+      
       <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="email">Email address:</label>
-          <input
-            placeholder="youremail@test.com"
-            name="email"
-            type="email"
-            id="email"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="pwd">Password:</label>
-          <input
-            placeholder="******"
-            name="password"
-            type="password"
-            id="pwd"
-            onChange={handleChange}
-          />
+        <header className="page__header">
+          <h2 className="text-center">Login</h2>
+        </header>
+        
+        <div className="grid-container">
+          <div className="grid-x grid-padding-x">
+            <div className="cell">
+              <label >Email address:
+              <input
+                placeholder="youremail@test.com"
+                name="email"
+                type="email"
+                id="email"
+                onChange={handleChange}
+              />
+              </label>
+            </div>
+
+            <div className="cell">
+              <label>Password:
+                <input
+                  placeholder="******"
+                  name="password"
+                  type="password"
+                  id="pwd"
+                  onChange={handleChange}
+                />
+              </label>
+            </div>
+          </div>  
         </div>
         {error ? (
           <div>
             <p className="error-text">The provided credentials are incorrect</p>
           </div>
         ) : null}
-        <div className="flex-row flex-end">
-          <button type="submit">Login</button>
-          <button><Link to="/signup">Signup</Link></button>
+        <div className="cell">
+          <div className="button-group">
+            <button type="submit">Login</button>
+            <button><Link to="/signup">Signup</Link></button>
+          </div>
         </div>
       </form>
     </div>

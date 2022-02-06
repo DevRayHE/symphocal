@@ -34,7 +34,9 @@ const Calendar = () => {
 
   return (
     <div className="container">
-      <h1> This is Calendar page</h1>
+      <header className="page__header">
+        <h2 className="text-center">Profile</h2>
+      </header>
       {/* {loading ? <button>loading</button> : renderClasses() } */}
       {/* conditional rendering to avoid bugs */}
       {classes ? classes.map((item) => (

@@ -17,10 +17,7 @@ const Profile = () => {
 
   const [ date, setDate ] =useState(new Date());
   const [formState, setFormState] = useState({ firstName: '', lastName: '' });
-
-  // const handleDateSelect = (dateSelected) => {
-  //   setDate(dateSelected);
-  // };
+  const [displayChildForm, setDisplayChildForm] = useState(false);
 
   const { loading, data: userData } = useQuery(QUERY_USER);
 
@@ -31,7 +28,6 @@ const Profile = () => {
         user: userData.user,
       })
     } 
-    // else if ()
 
   }, [userData, loading, dispatch]); // effect will only activate if the values in the list change.
 
@@ -54,44 +50,28 @@ const Profile = () => {
       const newChild = mutationResponse.data.addChild;
       console.log("NewChild created!: ");
       console.log(newChild._id);
+      // hide the form on successful form submission
+      setDisplayChildForm(false);
     } catch (e) {
       console.log(e);
     }
-
-    // console.log("date is:" + date);
-    // console.log(event);
   };
-
-  // const addChildToUser = async (childId) => {
-  //   try {
-  //     const mutationResponse = await udpateUser({
-
-  //     })
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormState({
       ...formState,
       [name]: value,
-      
     });
     console.log(name + value);
   };
 
-  return (
-    <div className="container">
-      {/* Conditional render */}
-      {
-      userData
-      ? 
+  const addChildForm = () => {
+    // {/* Conditional render */}
+    return (
       <div>
-      <h1> Hello {userData.user.firstName} </h1> 
       <form onSubmit={handleFormSubmit}>
-        <h5>Add your child's info</h5>
+        {/* <h5>Add your child's info</h5> */}
         <div className="grid-container">
           <div className="grid-x grid-padding-x">
             <div className="cell">
@@ -102,6 +82,7 @@ const Profile = () => {
                 name="firstName"
                 id="firstName"
                 onChange={handleChange}
+                required pattern="[a-zA-Z0-9\s]+"
                 />
               </label>
             </div>
@@ -112,6 +93,7 @@ const Profile = () => {
                 name="lastName"
                 id="lastName"
                 onChange={handleChange}
+                required pattern="[a-zA-Z0-9\s]+"
                 />
               </label>
             </div>
@@ -120,10 +102,15 @@ const Profile = () => {
                 {/* <input type="text" placeholder="date of birth"/> */}
                 <DatePicker
                   closeOnScroll={true}
+                  showYearDropdown
+                  dateFormatCalendar="MMMM"
+                  yearDropdownItemNumber={15}
+                  scrollableYearDropdown
                   selected={date}
                   onSelect={(selectedDate) => setDate(selectedDate)} //when day is clicked
                   onChange={(selectedDate) => setDate(selectedDate)} //only when value has changed
-                  />
+                  required
+                />
               </label>
             </div>
             <div className="cell">
@@ -137,6 +124,28 @@ const Profile = () => {
         </div>
       </form>
       </div>
+    );
+  };
+
+  // TODO: edit profile Form
+  // TODO: handle edit profile form submit
+
+  return (
+    <div className="container">
+      {/* conditonal render */}
+      {
+      userData
+      ? 
+      <>
+      <header className="page__header">
+        <h2 className="text-center">Profile</h2>
+      </header>
+      <h3> Hello {userData.user.firstName} </h3>
+      <div className="button-group">
+        <button> Edit Profile</button>
+        <button onClick={() => setDisplayChildForm(true)}> Add a child</button>
+      </div>
+      </>
       :
       <>
       <h1>Please login to view your profile</h1>
@@ -148,7 +157,14 @@ const Profile = () => {
       </Link>
       </>
       }
-      
+      {
+      displayChildForm 
+      ?
+      addChildForm()
+      :
+      <></>
+      }
+      {/* TODO:  edit profile form   */}
     </div>
   );
 };

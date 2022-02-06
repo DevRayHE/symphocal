@@ -10,30 +10,6 @@ function Signup(props) {
   // get global state
   const [ state, dispatch ] = useAppContext();
 
-  // check value of boolean variable isNewUser
-  // console.log("isNewUser status:" + state.isNewUser);
-
-  // function to toggle isNewUser global state, when true(on signup, will navigate to Profile page, add children(student))
-  // function toggleSignUp() {
-  //   console.log("toggleSignup Func activated!")
-  //   dispatch({ type: TOGGLE_SIGNUP })
-  //   console.log("isNewUser status:" + state.isNewUser)
-  // }
-
-  // useEffect(() => {
-  //   if (!isNewUser) {
-  //     dispatch({
-  //       type: TOGGLE_SIGNUP,
-  //       newUser: true,
-  //     })
-  //   } 
-  //   // else if ()
-
-  // }, [isNewUser, dispatch]); // effect will only activate if the values in the list change.
-
-  // console.log("newUser true or false after useEffct" + isNewUser)
-
-
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [createUser] = useMutation(CREATE_USER);
 
@@ -63,75 +39,111 @@ function Signup(props) {
   };
 
   return (
-    <div className="container signup">
 
-      <h2>Signup</h2>
-      <form className="signup__form" onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between signup__form__input">
-          <label htmlFor="firstName">First Name:</label>
-          <input
-            placeholder="First"
-            name="firstName"
-            type="firstName"
-            id="firstName"
-            onChange={handleChange}
-          />
+    <div className="container" data-abide noValidate>
+
+      <form onSubmit={handleFormSubmit}>
+        <header className="page__header">
+          <h2 className="text-center">Sign Up</h2>
+        </header>
+        
+        <div className="grid-container">
+          <div className="grid-x grid-padding-x">
+            <div className="cell">
+              <label>First Name:
+              <input
+                placeholder="First Name"
+                name="firstName"
+                type="text"
+                onChange={handleChange}
+                required pattern="[a-zA-Z0-9\s]+"
+              />
+              </label>
+            </div>
+
+            <div className="cell">
+              <label>Last Name:
+                <input
+                  placeholder="Last Name"
+                  name="lastName"
+                  type="text"
+                  onChange={handleChange}
+                  required pattern="[a-zA-Z0-9\s]+"
+                />
+              </label>
+            </div>
+
+            <div className="cell">
+              <label>Mobile:
+                <input
+                  placeholder="0404123456"
+                  name="mobile"
+                  type="text"
+                  onChange={handleChange}
+                  required pattern="[0-9]+"
+                />
+              </label>
+            </div>
+
+            <div className="cell">
+              <label>Post Code:
+                <input
+                  placeholder="2112"
+                  name="postCode"
+                  type="text"
+                  onChange={handleChange}
+                  required pattern="[0-9]+"
+                />
+              </label>
+            </div>
+
+            <div className="cell">
+              <label>Email:
+                <input
+                  placeholder="thisismyemail@gmail.com"
+                  name="email"
+                  type="email"
+                  onChange={handleChange}
+                  required pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
+                />
+              </label>
+            </div>
+
+            <div className="cell">
+              <label>Password:
+                <input
+                  placeholder="********"
+                  name="password"
+                  type="password"
+                  id="password"
+                  onChange={handleChange}
+                  required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"
+                />
+              </label>
+            </div>
+
+            <div className="cell">
+              <label>Confirm Password:
+                <input
+                  placeholder="********"
+                  name="confirmPassword"
+                  type="password"
+                  onChange={handleChange}
+                  required 
+                  pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"
+                  data-equalto={formState.password}
+                />
+              </label>
+              {/* <small className="error">The password did not match</small> */}
+            </div>
+
+          </div>  
         </div>
-        <div className="flex-row space-between signup__form__input">
-          <label htmlFor="lastName">Last Name:</label>
-          <input
-            placeholder="Last"
-            name="lastName"
-            type="lastName"
-            id="lastName"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row space-between signup__form__input">
-          <label htmlFor="mobile">Mobile:</label>
-          <input
-            placeholder="0404xxxxxx"
-            name="mobile"
-            type="mobile"
-            id="mobile"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row space-between signup__form__input">
-          <label htmlFor="postCode">Post Code:</label>
-          <input
-            placeholder="2112"
-            name="postCode"
-            type="postCode"
-            id="postCode"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row space-between signup__form__input">
-          <label htmlFor="email">Email:</label>
-          <input
-            placeholder="youremail@test.com"
-            name="email"
-            type="email"
-            id="email"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row space-between signup__form__input">
-          <label htmlFor="pwd">Password:</label>
-          <input
-            placeholder="******"
-            name="password"
-            type="password"
-            id="pwd"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row flex-end">
-          {/* On submit of the form, toggle isNewUser global state variable to true, to navigate to Profile page instead of Calendar page, which is handled with ../utils/auth.js login method */}
-          <button type="submit">Submit</button>
-          <button><Link to="/login">Login</Link></button>
-          {/* <button><a href="#test" onClick={toggleSignUp}>Test</a></button> */}
+        <div className="cell">
+          <div className="button-group">
+            <button><Link to="/login">Login</Link></button>
+            <button type="submit">Submit</button>
+          </div>
         </div>
       </form>
     </div>
