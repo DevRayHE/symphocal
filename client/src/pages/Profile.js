@@ -5,6 +5,7 @@ import { QUERY_USER } from '../utils/queries';
 import { ADD_CHILD, UPDATE_USER } from '../utils/mutations';
 import { UPDATE_USER_STATE, TOGGLE_SIGNUP } from '../utils/actions';
 import { useAppContext } from '../utils/GlobalState';
+import Student from '../components/Student';
 import DatePicker from "react-datepicker";
 import 'react-datepicker/dist/react-datepicker.css'
 
@@ -14,7 +15,6 @@ const Profile = () => {
   const [ state, dispatch ] = useAppContext();
   const [ addChild] = useMutation(ADD_CHILD);
   const [ udpateUser ] = useMutation(UPDATE_USER);
-
   const [ date, setDate ] =useState(new Date());
   const [formState, setFormState] = useState({ firstName: '', lastName: '' });
   const [displayChildForm, setDisplayChildForm] = useState(false);
@@ -29,7 +29,7 @@ const Profile = () => {
       })
     } 
 
-  }, [userData, loading, dispatch]); // effect will only activate if the values in the list change.
+  }, [userData, loading, dispatch]);
 
   console.log("userData: " + userData);
 
@@ -52,6 +52,11 @@ const Profile = () => {
       console.log(newChild._id);
       // hide the form on successful form submission
       setDisplayChildForm(false);
+      window.location.reload();
+      // dispatch({
+      //   type: UPDATE_USER_STATE,
+      //   user: userData.user,
+      // })
     } catch (e) {
       console.log(e);
     }
@@ -130,6 +135,9 @@ const Profile = () => {
   // TODO: edit profile Form
   // TODO: handle edit profile form submit
 
+  // console.log(userData.user.children)
+  // console.log(userData.user.children.map((eachChild) => eachChild.firstName))
+
   return (
     <div className="container">
       {/* conditonal render */}
@@ -141,9 +149,12 @@ const Profile = () => {
         <h2 className="text-center">Profile</h2>
       </header>
       <h3> Hello {userData.user.firstName} </h3>
-      <div className="button-group">
-        <button> Edit Profile</button>
-        <button onClick={() => setDisplayChildForm(true)}> Add a child</button>
+      <div className="grid-x grid-margin-x small-up-2 medium-up-3">
+        {userData.user.children.map((eachChild) => <Student {...eachChild} key={eachChild._id}/>)}
+        <div className="button-group">
+          <button> Edit Profile</button>
+          <button onClick={() => setDisplayChildForm(true)}> Add a child</button>
+        </div>
       </div>
       </>
       :

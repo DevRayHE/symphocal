@@ -27,7 +27,7 @@ const Footer = () => {
 							</span>
 						</a>
 					</li>
-					<li className="ms-3" data-bs-toggle="tooltip" data-bs-placement="top" title="Checkout my Github">
+					<li className="ms-3" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook page">
 						<a className="text-muted" href="https://www.facebook.com/ismryde/">
 							<span className=
 							// "contact-icon github"
@@ -37,7 +37,7 @@ const Footer = () => {
 							</span>
 						</a>
 					</li>
-          <li className="ms-3" data-bs-toggle="tooltip" data-bs-placement="top" title="My Linkedin Page">
+          <li className="ms-3" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram page">
 						<a className="text-muted" href="https://www.instagram.com/ismryde/?igshid=75ql56jyeo1a">
 							<span className=
 							// "contact-icon linkedin"
@@ -47,7 +47,7 @@ const Footer = () => {
 							</span>
 						</a>
 					</li>
-					<li className="ms-3" data-bs-toggle="tooltip" data-bs-placement="top" title="Download my resume">
+					<li className="ms-3" data-bs-toggle="tooltip" data-bs-placement="top" title="Chat with us">
 						<a className="text-muted" href="https://www.messenger.com/login.php?next=https%3A%2F%2Fwww.messenger.com%2Ft%2F100003375948005">
 							<span className=
 							// "contact-icon file"

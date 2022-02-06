@@ -142,7 +142,8 @@ function Signup(props) {
         <div className="cell">
           <div className="button-group">
             <button><Link to="/login">Login</Link></button>
-            <button type="submit">Submit</button>
+            <button>Submit</button>
+            {/* <button><input  type="submit" value="submit"/></button> */}
           </div>
         </div>
       </form>

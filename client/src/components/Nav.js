@@ -94,52 +94,55 @@ import { Menu, MenuItem } from 'react-foundation';
 
 const Nav = () => {
 	return (
-		<div>
-		<MenuItem>
-		<Link
-		className='nav-link'
-		to="/" 
-		>
-		<h5>Home</h5>
-		</Link>
-		</MenuItem>
+		// <div>
+		// <MenuItem>
 
-		<MenuItem>
-		<Link
-		className='nav-link'
-		to="/Login" 
-		>
-		<h5>Login</h5>
-		</Link>
-		</MenuItem>
+		// </MenuItem>
 
-		<MenuItem>
-		<Link
-		className='nav-link'
-		to="/Signup" 
-		>
-		<h5>Signup</h5>
-		</Link>
-		</MenuItem>
+		// <MenuItem>
+		// <Link
+		// className='nav-link'
+		// to="/Login" 
+		// >
+		// <h5>Login</h5>
+		// </Link>
+		// </MenuItem>
 
-		<MenuItem>
-		<Link
-		className='nav-link'
-		to="/Profile" 
-		>
-		<h5>Profile</h5>
-		</Link>
-		</MenuItem>
+		// <MenuItem>
+		// <Link
+		// className='nav-link'
+		// to="/Signup" 
+		// >
+		// <h5>Signup</h5>
+		// </Link>
+		// </MenuItem>
 
-		<MenuItem>
-		<Link
-		className='nav-link'
-		to="/Calendar" 
-		>
-		<h5>Calendar</h5>
-		</Link>
-		</MenuItem>
-		</div>
+		// <MenuItem>
+		// <Link
+		// className='nav-link'
+		// to="/Profile" 
+		// >
+		// <h5>Profile</h5>
+		// </Link>
+		// </MenuItem>
+
+		// <MenuItem>
+		// <Link
+		// className='nav-link'
+		// to="/Calendar" 
+		// >
+		// <h5>Calendar</h5>
+		// </Link>
+		// </MenuItem>
+		// </div>
+
+		<ul className="menu navbar align-center">
+			<li><Link className='nav-link' to="/" ><h5>Home</h5></Link></li>
+			<li><Link className='nav-link' to="/Login" ><h5>Login</h5></Link></li>
+			<li><Link className='nav-link' to="/Signup" ><h5>Signup</h5></Link></li>
+			<li><Link className='nav-link' to="/Profile" ><h5>Profile</h5></Link></li>
+			<li><Link className='nav-link' to="/Calendar" ><h5>Calendar</h5></Link></li>
+		</ul>
 	);
 };
 

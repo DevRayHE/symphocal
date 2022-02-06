@@ -40,6 +40,9 @@ const userSchema = new Schema({
       ref: 'Student'
     }
   ]
+  // children: [
+  //   Student.schema
+  // ]
 });
 
 // setup pre save middleware to create password

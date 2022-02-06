@@ -71,7 +71,8 @@ function Login(props) {
         ) : null}
         <div className="cell">
           <div className="button-group">
-            <button type="submit">Login</button>
+            {/* <button><input  type="submit" value="Login"/></button> */}
+            <button >Login</button>
             <button><Link to="/signup">Signup</Link></button>
           </div>
         </div>
