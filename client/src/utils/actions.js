@@ -1,5 +1,5 @@
-export const UPDATE_USER = "GET_USER";
+export const UPDATE_USER_STATE = "GET_USER";
 
-export const UPDATE_CLASS = "UPDATE_CLASS";
+export const UPDATE_CLASS_STATE = "UPDATE_CLASS_STATE";
 
 export const TOGGLE_SIGNUP = 'TOGGLE_SIGNUP'

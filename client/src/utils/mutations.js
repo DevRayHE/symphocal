@@ -1,4 +1,5 @@
 import { gql } from '@apollo/client';
+// const gql = require('@apollo/client');
 
 export const LOGIN = gql`
   mutation login($email: String!, $password: String!) {
@@ -38,12 +39,11 @@ export const CREATE_USER = gql`
 
 export const UPDATE_USER = gql`
   mutation updateUser(
-    $firstName: String!,
-    $lastName: String!,
-    $mobile: String!,
-    $postCode: String!,
-    $email: String!,
-    $password: String!
+    $firstName: String,
+    $lastName: String,
+    $mobile: String,
+    $postCode: String,
+    $email: String
   ) {
     updateUser(
       firstName: $firstName
@@ -51,12 +51,24 @@ export const UPDATE_USER = gql`
       mobile: $mobile
       postCode: $postCode
       email: $email
-      password: $password
     ) {
-      token
-      user {
-        _id
-      }
+      _id
+    }
+  }
+`;
+
+export const ADD_CHILD = gql`
+  mutation addChild(
+    $firstName: String!,
+    $lastName: String!,
+    $dateOfBirth: String!
+  ) {
+    addChild(
+      firstName: $firstName
+      lastName: $lastName
+      dateOfBirth: $dateOfBirth
+    ) {
+      _id
     }
   }
 `;

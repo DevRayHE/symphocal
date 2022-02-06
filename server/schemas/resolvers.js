@@ -1,6 +1,7 @@
 const { User, Student, Class } = require('../models');
 const { signToken } = require('../utils/auth');
 const { AuthenticationError } = require('apollo-server-express');
+const { UPDATE_USER } = require('../../client/src/utils/mutations');
 
 const resolvers = {
   Query: {
@@ -35,9 +36,16 @@ const resolvers = {
     
       return { token, user };
     },
-    // TODO: addChild: async (parent, args) => {
+    addChild: async (parent, args, context) => {
+      // create new student
+      const student = await Student.create(args);
 
-    // },
+      if (context.user) {
+        const user = await User.findByIdAndUpdate(context.user._id,  { $push: { children: student._id } });
+      } else { throw new AuthenticationError('Not logged in!'); }
+
+      return student;
+    },
     updateUser: async (parent, args, context) => {
       if (context.User) {
         return await User.findByIdAndUpdate(context.user._id, args, { new: true });

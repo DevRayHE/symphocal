@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useQuery, useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
 import { QUERY_ALL_CLASSES, QUERY_STUDENT, QUERY_USER } from '../utils/queries';
-import { UPDATE_CLASS } from '../utils/actions';
+import { UPDATE_CLASS_STATE } from '../utils/actions';
 import { useAppContext } from '../utils/GlobalState';
 import moment from 'moment';
 
@@ -22,7 +22,7 @@ const Calendar = () => {
   useEffect(() => {
     if (classData) {
       dispatch({
-        type: UPDATE_CLASS,
+        type: UPDATE_CLASS_STATE,
         classes: classData.classes,
       })
     } 

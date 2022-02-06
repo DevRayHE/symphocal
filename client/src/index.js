@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // import './index.css';
+// Add Foundation
+import 'foundation-sites/dist/css/foundation.min.css';
+
 import App from './App';
 import './sass/main.sass';
 import reportWebVitals from './reportWebVitals';

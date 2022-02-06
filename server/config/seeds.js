@@ -18,7 +18,7 @@ db.once('open', async () => {
     {
       firstName: 'Sande',
       lastName: 'Singh',
-      dateOfBirth: '01-03-2016'
+      dateOfBirth: '01-03-2018'
     }
   ]);
 

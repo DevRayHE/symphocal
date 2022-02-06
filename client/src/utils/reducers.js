@@ -1,17 +1,17 @@
 import { useReducer } from 'react';
-import { UPDATE_USER, UPDATE_CLASS, TOGGLE_SIGNUP } from './actions';
+import { UPDATE_USER_STATE, UPDATE_CLASS_STATE, TOGGLE_SIGNUP } from './actions';
 
 // The reducer is a function that accepts the current state and an action. It returns a new state based on that action.
 export const reducer = (state, action) => {
   switch (action.type) {
     // returns currnet logged in user's info
-    case UPDATE_USER:
+    case UPDATE_USER_STATE:
       return {
         ...state,
         user: action.user,
       };
 
-    case UPDATE_CLASS:
+    case UPDATE_CLASS_STATE:
       return {
         ...state,
         classes: action.classes,
