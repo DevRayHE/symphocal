@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/symphocal/static/css/main.40b74a83.css",
+    "main.js": "/symphocal/static/js/main.86024f06.js",
+    "static/js/787.a25b995b.chunk.js": "/symphocal/static/js/787.a25b995b.chunk.js",
+    "index.html": "/symphocal/index.html",
+    "main.40b74a83.css.map": "/symphocal/static/css/main.40b74a83.css.map",
+    "main.86024f06.js.map": "/symphocal/static/js/main.86024f06.js.map",
+    "787.a25b995b.chunk.js.map": "/symphocal/static/js/787.a25b995b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.40b74a83.css",
+    "static/js/main.86024f06.js"
+  ]
+}
