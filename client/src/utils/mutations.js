@@ -72,3 +72,17 @@ export const ADD_CHILD = gql`
     }
   }
 `;
+
+export const ENROL_STUDENT = gql`
+  mutation enrolStudent(
+    $classId: ID!,
+    $studentId: ID!
+  ) {
+    enrolStudent(
+      classId: $classId
+      studentId: $studentId
+    ) {
+      _id
+    }
+  }
+`;

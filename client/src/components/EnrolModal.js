@@ -1,10 +1,20 @@
 import React, { useState } from "react";
 import Modal from 'react-modal';
 import Student from '../components/Student';
+import { useAppContext } from '../utils/GlobalState';
+import { Link } from 'react-router-dom';
 
 const EnrolModal = ({
-  children
+  classId
 }) => {
+
+  console.log(classId);
+
+
+  const [ state, dispatch ] = useAppContext();
+  const { user } = state;
+
+  let userAndClassId = {user, classId}
 
   const customStyles = {
     content: {
@@ -49,7 +59,26 @@ const EnrolModal = ({
           <button className="float-right" onClick={closeModal}>close</button>
           <p>Simply choose a child to enrol</p>
         <div className="grid-x grid-margin-x small-up-2 medium-up-3">
-            {children ? children.map((eachChild) => <Student {...eachChild} key={eachChild._id}/>) : <></>}
+        {user.children ? user.children.map((eachChild) => 
+        <Student 
+          _id = {eachChild._id}
+          firstName = {eachChild.firstName}
+          lastName = {eachChild.lastName}
+          dateOfBirth = {eachChild.dateOfBirth}
+          classId = {classId}
+          key={eachChild._id}/>) 
+        : 
+        <>
+        <h5>Please login to enrol</h5>
+          <Link
+          className='nav-link'
+          to="/Login" 
+          >
+          <h5>Login</h5>
+          </Link>
+        </>}
+        {/* {userAndClassId ? userAndClassId.map((eachChild) => <Student {...eachChild} key={eachChild._id}/>) : <></>} */}
+
           </div>
         </Modal>
       </div>

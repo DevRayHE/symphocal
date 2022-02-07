@@ -52,13 +52,7 @@ const typeDefs = gql`
       email: String!,
       password: String!
     ): Auth
-    
-    addChild(
-      firstName: String!,
-      lastName: String!,
-      dateOfBirth: String!
-    ): Student
-
+  
     updateUser(
       firstName: String!,
       lastName: String!,
@@ -71,6 +65,17 @@ const typeDefs = gql`
       email: String!,
       password: String!
     ): Auth
+
+    addChild(
+      firstName: String!,
+      lastName: String!,
+      dateOfBirth: String!
+    ): Student
+
+    enrolStudent(
+      classId: ID,
+      studentId: ID
+    ): Class
   }
 `;
 

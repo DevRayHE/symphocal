@@ -33,11 +33,11 @@ class AuthService {
     localStorage.setItem('id_token', idToken);
 
     console.log("isSignUp status: " + isSignUp);
-    if (isSignUp) {
+    // if (isSignUp) {
       window.location.assign('/Profile');
-    } else {
-      window.location.assign('/calendar');
-    }
+    // } else {
+      // window.location.assign('/calendar');
+    // }
     // window.location.href = 'http://localhost:3000/calendar';
     console.log('User logged in successful!')
   }

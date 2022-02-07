@@ -18,12 +18,7 @@ const resolvers = {
           populate: 'children'
         });
 
-        // const user = await User.findById(context.user._id)
-
         return user;
-
-        console.log("context.user is true!");
-        // return await User.findOne({_id: context.user._id})
       }
 
       throw new AuthenticationError('Not logged in');
@@ -45,6 +40,12 @@ const resolvers = {
       } else { throw new AuthenticationError('Not logged in!'); }
 
       return student;
+    },
+    enrolStudent: async (parent, args) => {
+      // enrol a student to a class
+      const updatedClass = await Class.findByIdAndUpdate(args.classId,  { $push: { student: args.studentId },  new: true });
+
+      return updatedClass;
     },
     updateUser: async (parent, args, context) => {
       if (context.User) {

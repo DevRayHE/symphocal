@@ -66,7 +66,7 @@ const Calendar = () => {
   // console.log("state classes:" + state.classes)
 
   // combine the classes and user objects together, for spread and map each later.
-  const classAndUser = {...classes, ...user};
+  // const classAndUser = [classes, user];
 
   return (
     <div className="grid-container">
@@ -94,7 +94,7 @@ const Calendar = () => {
       <div className="grid-x grid-margin-x small-up-2 medium-up-3">
       {/* {loading ? <button>loading</button> : renderClasses() } */}
       {/* conditional rendering to avoid bugs */}
-      {classes ? classes.map((eachClass) => <Class {...classAndUser} key={eachClass._id}/>) : <h1>loading</h1>}
+      {classes ? classes.map((eachClass) => <Class {...eachClass} key={eachClass._id}/>) : <h1>loading</h1>}
       </div>
     </div>
   );
