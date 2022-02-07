@@ -14,7 +14,7 @@ const Profile = () => {
   // global state
   const [ state, dispatch ] = useAppContext();
   // using refetchQueries here to refetch user info when a new child info is added
-  const [ addChild] = useMutation(ADD_CHILD, {
+  const [ addChild ] = useMutation(ADD_CHILD, {
     refetchQueries: [
       QUERY_USER,
     ],
@@ -142,6 +142,18 @@ const Profile = () => {
 
   // console.log(userData.user.children)
   // console.log(userData.user.children.map((eachChild) => eachChild.firstName))
+  // const handleDisplayAddForm = () => (
+  //         {
+  //           displayChildForm
+  //           ?
+  //           addChildForm()
+  //           :
+  //           <div className="button-group">
+  //               <button> Edit Profile</button>
+  //               <button onClick={() => setDisplayChildForm(true)}> Add a child</button>
+  //           </div>
+  //         }
+  // )
 
   return (
     <div className="container">
@@ -157,6 +169,12 @@ const Profile = () => {
       <div className="grid-x grid-margin-x small-up-2 medium-up-3">
         {userData.user.children.map((eachChild) => <Student {...eachChild} key={eachChild._id}/>)}
       </div>
+        {displayChildForm
+          ? addChildForm()
+          : <div className="button-group">
+              <button> Edit Profile</button>
+              <button onClick={() => setDisplayChildForm(true)}> Add a child</button>
+            </div>}
       </>
       :
       <>
@@ -169,16 +187,7 @@ const Profile = () => {
       </Link>
       </>
       }
-      {
-      displayChildForm 
-      ?
-      addChildForm()
-      :
-      <div className="button-group">
-          <button> Edit Profile</button>
-          <button onClick={() => setDisplayChildForm(true)}> Add a child</button>
-      </div>
-      }
+      
       {/* TODO:  edit profile form   */}
     </div>
   );
