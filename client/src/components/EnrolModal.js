@@ -8,7 +8,7 @@ const EnrolModal = ({
   classId
 }) => {
 
-  console.log(classId);
+  // console.log(classId);
 
   const [ state, dispatch ] = useAppContext();
   const { user } = state;

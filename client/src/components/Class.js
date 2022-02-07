@@ -38,9 +38,9 @@ const Class = ({
   }
 
   return (
-      <div className="card col-md-5 col-lg-5 text-center p-2 m-2" id={_id}>
+      <div className="card col-md-5 col-lg-3 text-center p-2 m-2" id={_id}>
       <div className="card-header">
-        <button
+        {/* <button
           type="button"
           // className=""
           // className="btn card-title fw-bold"
@@ -52,9 +52,9 @@ const Class = ({
           data-bs-toggle="tooltip"
           data-bs-placement="down"
           title={description}
-        >
+        > */}
         <h3 className="card-title fw-bold">{name} {date}</h3>
-        </button>
+        {/* </button> */}
       </div>
 
       <div className="card-body">

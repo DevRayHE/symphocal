@@ -169,6 +169,7 @@ const Profile = () => {
       <div className="grid-x grid-margin-x small-up-2 medium-up-3">
         {userData.user.children.map((eachChild) => <Student {...eachChild} key={eachChild._id}/>)}
       </div>
+        {/* Conditonal render display child form */}
         {displayChildForm
           ? addChildForm()
           : <div className="button-group">
