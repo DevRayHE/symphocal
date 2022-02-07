@@ -13,6 +13,11 @@ const classSchema = new Schema({
     required: true,
     trim: true
   },
+  fullDescription: {
+    type: String,
+    required: true
+    // trim: true
+  },
   date: {
     type: String,
     required: true

@@ -1,6 +1,7 @@
 import React from "react";
 import { useMutation } from '@apollo/client';
 import { Link } from "react-router-dom";
+import { QUERY_ALL_CLASSES } from '../utils/queries';
 import { ENROL_STUDENT } from '../utils/mutations';
 import moment from 'moment';
 
@@ -13,7 +14,11 @@ const Student = ({
 }) => {
 
   const age = moment().diff(dateOfBirth, "years");
-  const [ enrol ] = useMutation(ENROL_STUDENT);
+  const [ enrol ] = useMutation(ENROL_STUDENT, {
+    refetchQueries: [
+      QUERY_ALL_CLASSES,
+    ],
+  });
 
   console.log(firstName + age);
   console.log("classID within Student component: " + classId);

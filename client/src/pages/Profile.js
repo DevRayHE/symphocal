@@ -13,7 +13,12 @@ import 'react-datepicker/dist/react-datepicker.css'
 const Profile = () => {
   // global state
   const [ state, dispatch ] = useAppContext();
-  const [ addChild] = useMutation(ADD_CHILD);
+  // using refetchQueries here to refetch user info when a new child info is added
+  const [ addChild] = useMutation(ADD_CHILD, {
+    refetchQueries: [
+      QUERY_USER,
+    ],
+  });
   const [ udpateUser ] = useMutation(UPDATE_USER);
   const [ date, setDate ] =useState(new Date());
   const [formState, setFormState] = useState({ firstName: '', lastName: '' });

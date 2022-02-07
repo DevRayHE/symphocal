@@ -10,7 +10,6 @@ const EnrolModal = ({
 
   console.log(classId);
 
-
   const [ state, dispatch ] = useAppContext();
   const { user } = state;
 
@@ -78,7 +77,6 @@ const EnrolModal = ({
           </Link>
         </>}
         {/* {userAndClassId ? userAndClassId.map((eachChild) => <Student {...eachChild} key={eachChild._id}/>) : <></>} */}
-
           </div>
         </Modal>
       </div>

@@ -34,12 +34,31 @@ form
   border-width: 0.3rem
   border-bottom-color: $dusk
 
+.section__header
+  margin-bottom: 0.5rem
+  border-bottom-style: solid
+  border-width: 0.3rem
+  border-bottom-color: $dusk
+  width:45%
+
+.section__image
+  width:25%
+  border-radius: 15%
+
+
+.card-img
+  width:50%
+
+
 .container
   display: block
   text-align: center
 
 .mainContainer
   @include flexCenter
+  background-image: linear-gradient(#B6A39D 0%, #ffffff 100%)
+  background-attachment: fixed
+
 
 .button-group
   // @include horizontalCenter
@@ -57,7 +76,24 @@ a
 .card
   display: block
   text-align: center
+  background-image: linear-gradient( #ffffff 0%, #B6A39D 100%)
+  background-attachment: fixed
 
 .card
   button
-    width: 35%
+    width: 45%
+
+.ReactModal__Overlay 
+  opacity: 0
+  transform: translateX(-100px)
+  transition: all 0.3s ease-in-out
+
+
+.ReactModal__Overlay--after-open 
+  opacity: 1
+  transform: translateX(0px)
+
+
+.ReactModal__Overlay--before-close 
+  opacity: 0
+  transform: translateX(-100px)

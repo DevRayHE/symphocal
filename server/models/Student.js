@@ -16,7 +16,13 @@ const studentSchema = new Schema({
   dateOfBirth: {
     type: String,
     required: true,
-  }
+  },
+  classes: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Class'
+    }
+  ]
 });
 
 const Student = mongoose.model('Student', studentSchema);

@@ -10,36 +10,13 @@ import Student from '../components/Student';
 import Modal from 'react-modal';
 import moment from 'moment';
 
-const Calendar = () => {
+import JitterbugsLogo from '../assets/images/ism_ryde_jitterbugs_logo.jpg';
+import BeeboppersLogo from '../assets/images/beebopper-logo.jpg';
+import PianoramaJuniorLogo from '../assets/images/ism_ryde_pianorama_course_logo_Junior.gif';
+import PianoramaPrimaryLogo from '../assets/images/ism_ryde_pianorama_course_logo_Primary.gif';
+import PianoramaExtensionLogo from '../assets/images/ism_ryde_pianorama_course_logo_Extension.gif';
 
-  // const customStyles = {
-  //   content: {
-  //     top: '50%',
-  //     left: '50%',
-  //     right: 'auto',
-  //     bottom: 'auto',
-  //     marginRight: '-50%',
-  //     transform: 'translate(-50%, -50%)',
-  //   },
-  // };
-  
-  // Modal.setAppElement('#root');
-  
-  // let subtitle;
-  // const [modalIsOpen, setIsOpen] = useState(false);
-  
-  // function openModal() {
-  //   setIsOpen(true);
-  // }
-  
-  // function afterOpenModal() {
-  //   // references are now sync'd and can be accessed.
-  //   subtitle.style.color = '#f00';
-  // }
-  
-  // function closeModal() {
-  //   setIsOpen(false);
-  // }
+const Calendar = () => {
 
   const [ state, dispatch ] = useAppContext();
 
@@ -70,32 +47,44 @@ const Calendar = () => {
 
   return (
     <div className="grid-container">
-      {/* <EnrolModal {...user}/> */}
-      {/* <div>
-        <button onClick={openModal}>Open Modal</button>
-        <Modal
-          isOpen={modalIsOpen}
-          onAfterOpen={afterOpenModal}
-          onRequestClose={closeModal}
-          style={customStyles}
-          contentLabel="Example Modal"
-        >
-          <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Enrol here</h2>
-          <button className="float-right" onClick={closeModal}>close</button>
-          <p>Simply choose a child to enrol</p>
-        <div className="grid-x grid-margin-x small-up-2 medium-up-3">
-            {user.children ? user.children.map((eachChild) => <Student {...eachChild} key={eachChild._id}/>) : <></>}
-          </div>
-        </Modal>
-      </div> */}
       <header className="page__header">
         <h2 className="text-center">Calendar</h2>
       </header>
-      <div className="grid-x grid-margin-x small-up-2 medium-up-3">
-      {/* {loading ? <button>loading</button> : renderClasses() } */}
-      {/* conditional rendering to avoid bugs */}
-      {classes ? classes.map((eachClass) => <Class {...eachClass} key={eachClass._id}/>) : <h1>loading</h1>}
+
+      <header className="section__header">
+        <h3 className="text-center">JitterBugs</h3>
+      </header>
+      <img className="section__image" src={JitterbugsLogo}/>
+
+      <header className="section__header">
+        <h3 className="text-center">Beeboppers</h3>
+      </header>
+      <img className="section__image" src={BeeboppersLogo}/>
+
+      <header className="section__header">
+        <h3 className="text-center">Pianorama Junior</h3>
+      </header>
+      <img className="section__image" src={PianoramaJuniorLogo}/>
+
+      <header className="section__header">
+        <h3 className="text-center">Pianorama Primary</h3>
+      </header>
+      <img className="section__image" src={PianoramaPrimaryLogo}/>
+
+      <header className="section__header">
+        <h3 className="text-center">Pianorama Extension</h3>
+      </header>
+      <img className="section__image" src={PianoramaExtensionLogo}/>
+
+      <div className="card-group">
+        <div 
+        className="row portfolio__row" 
+        // style="justify-content: space-evenly"
+        >
+        {classes ? classes.map((eachClass) => <Class {...eachClass} key={eachClass._id}/>) : <h1>loading</h1>}
+        </div>
       </div>
+
     </div>
   );
 };
