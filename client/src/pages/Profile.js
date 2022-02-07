@@ -151,10 +151,6 @@ const Profile = () => {
       <h3> Hello {userData.user.firstName} </h3>
       <div className="grid-x grid-margin-x small-up-2 medium-up-3">
         {userData.user.children.map((eachChild) => <Student {...eachChild} key={eachChild._id}/>)}
-        <div className="button-group">
-          <button> Edit Profile</button>
-          <button onClick={() => setDisplayChildForm(true)}> Add a child</button>
-        </div>
       </div>
       </>
       :
@@ -173,7 +169,10 @@ const Profile = () => {
       ?
       addChildForm()
       :
-      <></>
+      <div className="button-group">
+          <button> Edit Profile</button>
+          <button onClick={() => setDisplayChildForm(true)}> Add a child</button>
+      </div>
       }
       {/* TODO:  edit profile form   */}
     </div>

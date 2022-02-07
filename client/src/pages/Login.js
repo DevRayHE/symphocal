@@ -73,7 +73,7 @@ function Login(props) {
           <div className="button-group">
             {/* <button><input  type="submit" value="Login"/></button> */}
             <button >Login</button>
-            <button><Link to="/signup">Signup</Link></button>
+            <Link to="/signup"><button>Signup</button></Link>
           </div>
         </div>
       </form>

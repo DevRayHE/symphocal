@@ -49,7 +49,7 @@ const Calendar = () => {
   console.log(user);
   // console.log("user:" + user.firstName);
 
-  const { loading, data: classData , user: userData } = useQuery(QUERY_ALL_CLASSES, QUERY_USER);
+  const { loading, data: classData} = useQuery(QUERY_ALL_CLASSES);
   
   useEffect(() => {
     if (classData) {
@@ -62,25 +62,7 @@ const Calendar = () => {
 
   // const { userData } = useQuery(QUERY_USER);
 
-  useEffect(() => {
-    if (userData) {
-      dispatch({
-        type: UPDATE_USER_STATE,
-        user: userData.user,
-      })
-    } 
-
-  }, [userData, loading, dispatch]);
-
-  const showChild = () => {
-    return (
-      <div className="grid-x grid-margin-x small-up-2 medium-up-3">
-        {user.children.map((eachChild) => <Student {...eachChild} key={eachChild._id}/>)}
-      </div>
-    )
-  }
-
-  console.log("state classes:" + state.classes)
+  // console.log("state classes:" + state.classes)
 
   return (
     <div className="grid-container">
@@ -93,9 +75,9 @@ const Calendar = () => {
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
-          <button onClick={closeModal}>close</button>
-          <div>I am a modal</div>
+          <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Enrol here</h2>
+          <button className="float-right" onClick={closeModal}>close</button>
+          <p>Simply choose a child to enrol</p>
         <div className="grid-x grid-margin-x small-up-2 medium-up-3">
             {user.children ? user.children.map((eachChild) => <Student {...eachChild} key={eachChild._id}/>) : <></>}
           </div>
