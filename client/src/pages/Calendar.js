@@ -5,40 +5,41 @@ import { QUERY_ALL_CLASSES, QUERY_STUDENT, QUERY_USER } from '../utils/queries';
 import { UPDATE_CLASS_STATE, UPDATE_USER_STATE } from '../utils/actions';
 import { useAppContext } from '../utils/GlobalState';
 import Class from '../components/Class';
+import EnrolModal from '../components/EnrolModal';
 import Student from '../components/Student';
 import Modal from 'react-modal';
 import moment from 'moment';
 
 const Calendar = () => {
 
-  const customStyles = {
-    content: {
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      marginRight: '-50%',
-      transform: 'translate(-50%, -50%)',
-    },
-  };
+  // const customStyles = {
+  //   content: {
+  //     top: '50%',
+  //     left: '50%',
+  //     right: 'auto',
+  //     bottom: 'auto',
+  //     marginRight: '-50%',
+  //     transform: 'translate(-50%, -50%)',
+  //   },
+  // };
   
-  Modal.setAppElement('#root');
+  // Modal.setAppElement('#root');
   
-  let subtitle;
-  const [modalIsOpen, setIsOpen] = useState(false);
+  // let subtitle;
+  // const [modalIsOpen, setIsOpen] = useState(false);
   
-  function openModal() {
-    setIsOpen(true);
-  }
+  // function openModal() {
+  //   setIsOpen(true);
+  // }
   
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    subtitle.style.color = '#f00';
-  }
+  // function afterOpenModal() {
+  //   // references are now sync'd and can be accessed.
+  //   subtitle.style.color = '#f00';
+  // }
   
-  function closeModal() {
-    setIsOpen(false);
-  }
+  // function closeModal() {
+  //   setIsOpen(false);
+  // }
 
   const [ state, dispatch ] = useAppContext();
 
@@ -64,9 +65,13 @@ const Calendar = () => {
 
   // console.log("state classes:" + state.classes)
 
+  // combine the classes and user objects together, for spread and map each later.
+  const classAndUser = {...classes, ...user};
+
   return (
     <div className="grid-container">
-      <div>
+      {/* <EnrolModal {...user}/> */}
+      {/* <div>
         <button onClick={openModal}>Open Modal</button>
         <Modal
           isOpen={modalIsOpen}
@@ -82,16 +87,14 @@ const Calendar = () => {
             {user.children ? user.children.map((eachChild) => <Student {...eachChild} key={eachChild._id}/>) : <></>}
           </div>
         </Modal>
-      </div>
-
-
+      </div> */}
       <header className="page__header">
         <h2 className="text-center">Calendar</h2>
       </header>
       <div className="grid-x grid-margin-x small-up-2 medium-up-3">
       {/* {loading ? <button>loading</button> : renderClasses() } */}
       {/* conditional rendering to avoid bugs */}
-      {classes ? classes.map((eachClass) => <Class {...eachClass} key={eachClass._id}/>) : <h1>loading</h1>}
+      {classes ? classes.map((eachClass) => <Class {...classAndUser} key={eachClass._id}/>) : <h1>loading</h1>}
       </div>
     </div>
   );

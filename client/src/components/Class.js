@@ -1,4 +1,6 @@
 import React from "react";
+import EnrolModal from '../components/EnrolModal';
+import Student from '../components/Student';
 
 const Class = ({
   _id,
@@ -9,7 +11,8 @@ const Class = ({
   duration,
   capacity,
   cost,
-  room
+  room,
+  children
 }) => {
   return (
     <div class="cell" id={_id}>
@@ -24,7 +27,8 @@ const Class = ({
           <p><span>$</span>{cost/100}.00 inc GST</p>
           <p>Room: {room}</p>
         </div>
-        <button>Enroll</button>
+        <EnrolModal children={children}/>
+        {/* <button onClick={openModal}>Enroll</button> */}
       </div>
     </div>
   );
