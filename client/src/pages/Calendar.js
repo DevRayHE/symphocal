@@ -96,7 +96,7 @@ const Calendar = () => {
           <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
           <button onClick={closeModal}>close</button>
           <div>I am a modal</div>
-         <div className="grid-x grid-margin-x small-up-2 medium-up-3">
+        <div className="grid-x grid-margin-x small-up-2 medium-up-3">
             {user.children ? user.children.map((eachChild) => <Student {...eachChild} key={eachChild._id}/>) : <></>}
           </div>
         </Modal>

@@ -1,12 +1,21 @@
 .navbar
-  // $include: flexCenter
+  $include: flexCenter
   height: $nav-height
-  // $include: backgroundBlack
-  background: $cyan-opaque
+  background: $dusk
+  position: sticky 
+  position: -webkit-sticky 
+  //for safari compatility
+  top: 0 
+  z-index: 1 
+  //top 0 and z-index 1 for sticky display
+  //background-color: $light-pink 
+  color: $white 
+  //$include: flexCenter
 
   &__container
-    // $include: flexCenter
+    $include: flexCenter
     // $include: backgroundBlack
+    // background: $dark
 
 .nav-link:hover
 .contact-me-links a:hover,
@@ -14,10 +23,16 @@ button:hover,
 a:hover,
 #github:hover
   text-shadow: 0px 0px 8px #ffffff, 0 0 15px #ff6c6c
-  transition: all 0.2s ease-in-out
-  background: $orange
-  text: $light
+  // transition: all 0.2s ease-in-out
+  // background: $orange
+  // text: $light
 
+.nav-active
+  text-shadow: 0px 0px 8px #ffffff, 0 0 15px #ff6c6c
+
+.nav-item
+  color: $dark
+  
 .collapse 
   // background: black
 
@@ -25,7 +40,8 @@ a:hover,
   // background: black
 
 .navbar-nav
-  background: $navbar-background
+  background: $dusk
+  // text: $dark
 
 // .nav-item
 //   background: black
