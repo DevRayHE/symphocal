@@ -1,15 +1,30 @@
 {
   "files": {
-    "main.css": "/symphocal/static/css/main.40b74a83.css",
-    "main.js": "/symphocal/static/js/main.86024f06.js",
+    "main.css": "/symphocal/static/css/main.c4e7c6e0.css",
+    "main.js": "/symphocal/static/js/main.c4a7c8db.js",
     "static/js/787.a25b995b.chunk.js": "/symphocal/static/js/787.a25b995b.chunk.js",
+    "static/media/ism_ryde_pianorama_course_logo_Primary.gif": "/symphocal/static/media/ism_ryde_pianorama_course_logo_Primary.93c9404e22c9746d52da.gif",
+    "static/media/background1.jpg": "/symphocal/static/media/background1.dfaed92b19e63a512958.jpg",
+    "static/media/ism_ryde_pianorama_course_logo_Extension.gif": "/symphocal/static/media/ism_ryde_pianorama_course_logo_Extension.372afe65faf10c4f045c.gif",
+    "static/media/beeepoper.png": "/symphocal/static/media/beeepoper.e5b018be3b50fcbbf619.png",
+    "static/media/Pianorama-Extension.png": "/symphocal/static/media/Pianorama-Extension.179ff85cd1a9914329d8.png",
+    "static/media/Jitterbugs.png": "/symphocal/static/media/Jitterbugs.72892f82db34c7c79175.png",
+    "static/media/Pianorama-Junior.png": "/symphocal/static/media/Pianorama-Junior.3e931188c1fcc51be377.png",
+    "static/media/Pianorama-Primary.png": "/symphocal/static/media/Pianorama-Primary.99b728c35dfab1be70fa.png",
+    "static/media/Jitterbugs2.png": "/symphocal/static/media/Jitterbugs2.c769cf46ec9d9352bd2c.png",
+    "static/media/beeepoper2.png": "/symphocal/static/media/beeepoper2.d2c139a77f2ab5fa84a3.png",
+    "static/media/Pianorama-Junior2.png": "/symphocal/static/media/Pianorama-Junior2.84fabe6f1d27fbda736f.png",
+    "static/media/ism_ryde_pianorama_course_logo_Junior.gif": "/symphocal/static/media/ism_ryde_pianorama_course_logo_Junior.6eb6b94f924a91d4ba2d.gif",
+    "static/media/logo.png": "/symphocal/static/media/logo.ef14ba958006e8704823.png",
+    "static/media/ism_ryde_jitterbugs_logo.jpg": "/symphocal/static/media/ism_ryde_jitterbugs_logo.c93c5c0c610b4a5e0118.jpg",
+    "static/media/beebopper-logo-resized.jpg": "/symphocal/static/media/beebopper-logo-resized.36406011fc795a1d1339.jpg",
     "index.html": "/symphocal/index.html",
-    "main.40b74a83.css.map": "/symphocal/static/css/main.40b74a83.css.map",
-    "main.86024f06.js.map": "/symphocal/static/js/main.86024f06.js.map",
+    "main.c4e7c6e0.css.map": "/symphocal/static/css/main.c4e7c6e0.css.map",
+    "main.c4a7c8db.js.map": "/symphocal/static/js/main.c4a7c8db.js.map",
     "787.a25b995b.chunk.js.map": "/symphocal/static/js/787.a25b995b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.40b74a83.css",
-    "static/js/main.86024f06.js"
+    "static/css/main.c4e7c6e0.css",
+    "static/js/main.c4a7c8db.js"
   ]
 }
