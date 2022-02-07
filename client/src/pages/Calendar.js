@@ -44,11 +44,6 @@ const Calendar = () => {
 
   // console.log("state classes:" + state.classes)
 
-  // combine the classes and user objects together, for spread and map each later.
-  // const classAndUser = [classes, user];
-
-  // console.log(classes);
-
   // console.log(classes.filter(function (fClass) {
   //   return fClass.name === "Jitterbugs";
   // }))
@@ -105,7 +100,7 @@ const Calendar = () => {
               </h3>
               </header>
               {/* </h3> */}
-              <p className="card-text">{filteredClass[0].description}</p>
+              {filteredClass[0]? <p className="card-text">{filteredClass[0].description}</p> : <></> }
               <p className="card-text"><small className="text-muted"></small></p>
             </div>
           </div>
@@ -130,66 +125,17 @@ const Calendar = () => {
       <header className="page__header">
         <h2 className="text-center">Calendar</h2>
       </header>
-      
+
+      {classes 
+      ?
+      <>
       {renderByClassName("Jitterbugs")}
       {renderByClassName("Beeboppers")}
       {renderByClassName("Pianorama Junior")}
       {renderByClassName("Pianorama Primary")}
       {renderByClassName("Pianorama Extension")}
-
-      {/* <header className="section__header">
-        <h3 className="text-center">JitterBugs</h3>
-      </header>
-      <div><img className="section__image" src={JitterbugsLogo}/></div>
-      
-
-      <div className="">
-        <div 
-        className="row classes__row" 
-        // style="justify-content: space-evenly"
-        >
-        {jitterBugs ? jitterBugs.map((eachClass) => <Class {...eachClass} key={eachClass._id}/>) : <h1>loading</h1>}
-        </div>
-      </div>
-
-      <header className="section__header">
-        <h3 className="text-center">Beeboppers</h3>
-      </header>
-      <img className="section__image" src={BeeboppersLogo}/>
-
-      <div className="">
-        <div 
-        className="row classes__row" 
-        // style="justify-content: space-evenly"
-        >
-        {beeboppers ? beeboppers.map((eachClass) => <Class {...eachClass} key={eachClass._id}/>) : <h1>loading</h1>}
-        </div>
-      </div>
-
-      <header className="section__header">
-        <h3 className="text-center">Pianorama Junior</h3>
-      </header>
-      <img className="section__image" src={PianoramaJuniorLogo}/>
-
-      <header className="section__header">
-        <h3 className="text-center">Pianorama Primary</h3>
-      </header>
-      <img className="section__image" src={PianoramaPrimaryLogo}/>
-
-      <header className="section__header">
-        <h3 className="text-center">Pianorama Extension</h3>
-      </header>
-      <img className="section__image" src={PianoramaExtensionLogo}/>
-
-      <div className="">
-        <div 
-        className="row classes__row" 
-        // style="justify-content: space-evenly"
-        >
-        {classes ? classes.map((eachClass) => <Class {...eachClass} key={eachClass._id}/>) : <h1>loading</h1>}
-        </div>
-      </div> */}
-
+      </>
+      : <h1>loading</h1>}
     </div>
   );
 };

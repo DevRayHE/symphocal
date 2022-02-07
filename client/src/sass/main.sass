@@ -53,12 +53,16 @@ form
 .container
   display: block
   text-align: center
+  background: no-repeat center center fixed
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  -o-background-size: cover
+  background-size: cover
 
 .mainContainer
   @include flexCenter
   background-image: linear-gradient(#B6A39D 0%, #ffffff 100%)
   background-attachment: fixed
-
 
 .button-group
   // @include horizontalCenter
@@ -90,9 +94,12 @@ a
   background-image: linear-gradient( #ffffff 0%, #B6A39D 100%)
   background-attachment: fixed
 
-.card
   button
     width: 45%
+  
+.card-title
+  margin: 2rem
+  padding: 1rem
 
 .ReactModal__Overlay 
   opacity: 0
@@ -108,3 +115,17 @@ a
 .ReactModal__Overlay--before-close 
   opacity: 0
   transform: translateX(-100px)
+
+.home__card
+  color: white
+  background: $orange
+  max-width: 65%
+  border-radius: 45%
+  margin-top: 15rem
+  background: rgba(231,112,0,0.7)
+
+.home__card__title
+  margin-bottom: 0.3rem
+  border-bottom-style: solid
+  border-width: 0.1rem
+
