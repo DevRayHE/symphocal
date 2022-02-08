@@ -81,6 +81,9 @@ const Nav = () => {
 								<h5>Calendar</h5>
 							</Link>
 						</li>
+						<li>
+							<h2 className="home__title fw-bold">International School of Music Ryde</h2>
+						</li>
 					</ul>
 				</div>
 			</div>

@@ -52,7 +52,7 @@ function Signup(props) {
             <div className="cell">
               <label>First Name:
               <input
-                placeholder="First Name"
+                placeholder="Letters only"
                 name="firstName"
                 type="text"
                 onChange={handleChange}
@@ -64,7 +64,7 @@ function Signup(props) {
             <div className="cell">
               <label>Last Name:
                 <input
-                  placeholder="Last Name"
+                  placeholder="Letters only"
                   name="lastName"
                   type="text"
                   onChange={handleChange}
@@ -112,7 +112,7 @@ function Signup(props) {
             <div className="cell">
               <label>Password:
                 <input
-                  placeholder="********"
+                  placeholder="Min 6 upper and lowercase"
                   name="password"
                   type="password"
                   id="password"
@@ -125,7 +125,7 @@ function Signup(props) {
             <div className="cell">
               <label>Confirm Password:
                 <input
-                  placeholder="********"
+                  placeholder="Match password"
                   name="confirmPassword"
                   type="password"
                   onChange={handleChange}

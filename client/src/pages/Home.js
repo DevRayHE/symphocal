@@ -17,10 +17,10 @@ const Home = () => {
   return (
     <div className="container" style={ backgroundStyle }>
 
-      <div className="home__card">
+      <div className="card home__card">
       <div className="card-body">
-        <h2 className="card-title home__card__title fw-bold">ISM Ryde Brings Music to the Life of your <span className="fw-bold">Child</span></h2>
-        <h5 className="card-text">We aim to explore your child's musical creativity through diverse age appropriate programs</h5>
+        <h4 className="card-title home__card__title fw-bold">ISM Ryde Brings Music to the Life of your <span className="fw-bold">Child</span></h4>
+        <h6 className="card-text">We aim to explore your child's musical creativity through diverse age appropriate programs</h6>
         <button className="card-text home__card__button"><Link to="/Calendar">Check out our classes</Link></button>
       </div>
       </div>
