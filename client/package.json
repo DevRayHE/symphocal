@@ -2,7 +2,7 @@
   "name": "symphocal-client",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://devrayhe.github.io/symphocal",
+
   "proxy": "http://localhost:3001",
   "dependencies": {
     "@apollo/client": "^3.3.5",

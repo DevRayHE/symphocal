@@ -28,19 +28,19 @@ if (process.env.NODE_ENV === 'production') {
 
 
 // Original: 
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname, '../client/build/index.html'));
-// });
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
 
 
 // Solution from github
-app.set('appPath', 'public');
-app.use(express.static(__dirname +'/public'));
+// app.set('appPath', 'public');
+// app.use(express.static(__dirname +'/public'));
 
-app.route('/*')
-  .get(function(req, res) {
-    res.sendFile(app.get('appPath') + '/index.html');
-  });
+// app.route('/*')
+//   .get(function(req, res) {
+//     res.sendFile(app.get('appPath') + '/index.html');
+//   });
 // 
 
 db.once('open', () => {
