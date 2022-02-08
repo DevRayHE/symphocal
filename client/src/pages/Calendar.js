@@ -44,10 +44,6 @@ const Calendar = () => {
 
   // console.log("state classes:" + state.classes)
 
-  // console.log(classes.filter(function (fClass) {
-  //   return fClass.name === "Jitterbugs";
-  // }))
-
   const filterClass = (className) => {
     return (
       classes.filter(function (fClass) {
