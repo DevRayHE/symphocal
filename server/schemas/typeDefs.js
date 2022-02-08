@@ -7,6 +7,7 @@ const typeDefs = gql`
     firstName: String 
     lastName: String 
     dateOfBirth: String
+    classes: [Class]
   }
 
   type User {

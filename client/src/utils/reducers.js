@@ -1,5 +1,5 @@
 import { useReducer } from 'react';
-import { UPDATE_USER_STATE, UPDATE_CLASS_STATE, TOGGLE_SIGNUP } from './actions';
+import { UPDATE_USER_STATE, UPDATE_CLASS_STATE, UPDATE_STUDENT_STATE } from './actions';
 
 // The reducer is a function that accepts the current state and an action. It returns a new state based on that action.
 export const reducer = (state, action) => {
@@ -15,6 +15,12 @@ export const reducer = (state, action) => {
       return {
         ...state,
         classes: action.classes,
+      };
+
+    case UPDATE_STUDENT_STATE:
+      return {
+        ...state,
+        student: action.student,
       };
 
     // toggle the boolean value of isNewUser

@@ -45,7 +45,7 @@ const EnrolModal = ({
   }
 
   return (
-    <div>
+    <div className="classes__row">
         <button onClick={openModal}>Enrol</button>
         <Modal
           isOpen={modalIsOpen}
@@ -55,8 +55,7 @@ const EnrolModal = ({
           contentLabel="Example Modal"
         >
           <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Enrol here</h2>
-          <button className="float-right" onClick={closeModal}>close</button>
-          <p>Simply choose a child to enrol</p>
+          {/* <p>Simply choose a child to enrol</p> */}
         <div className="grid-x grid-margin-x small-up-2 medium-up-3">
         {user.children ? user.children.map((eachChild) => 
         <Student 
@@ -76,10 +75,12 @@ const EnrolModal = ({
           <h5>Login</h5>
           </Link>
         </>}
+        
         {/* {userAndClassId ? userAndClassId.map((eachChild) => <Student {...eachChild} key={eachChild._id}/>) : <></>} */}
           </div>
+          <button className="float-right" onClick={closeModal}>close</button>
         </Modal>
-      </div>
+    </div>
   )
 };
 

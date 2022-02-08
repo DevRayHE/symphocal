@@ -46,6 +46,7 @@ function App() {
             <Nav />
             <div className="mainContainer">
             <Switch>
+              <Route exact path="/symphocal" component={Home} />
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Signup} />

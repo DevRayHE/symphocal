@@ -116,6 +116,7 @@ const Profile = () => {
                   dateFormatCalendar="MMMM"
                   yearDropdownItemNumber={15}
                   scrollableYearDropdown
+                  maxDate={new Date()}
                   selected={date}
                   onSelect={(selectedDate) => setDate(selectedDate)} //when day is clicked
                   onChange={(selectedDate) => setDate(selectedDate)} //only when value has changed
@@ -163,17 +164,17 @@ const Profile = () => {
       ? 
       <>
       <header className="page__header">
-        <h2 className="text-center">Profile</h2>
+        <h2 className="text-center fw-bold">Profile</h2>
       </header>
       <h3> Hello {userData.user.firstName} </h3>
-      <div className="grid-x grid-margin-x small-up-2 medium-up-3">
+      <div className="row classes__row">
         {userData.user.children.map((eachChild) => <Student {...eachChild} key={eachChild._id}/>)}
       </div>
         {/* Conditonal render display child form */}
         {displayChildForm
           ? addChildForm()
           : <div className="button-group">
-              <button> Edit Profile</button>
+              {/* <button> Edit Profile</button> */}
               <button onClick={() => setDisplayChildForm(true)}> Add a child</button>
             </div>}
       </>

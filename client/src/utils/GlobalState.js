@@ -9,6 +9,7 @@ const AppProvider = ({ value = [], ...props }) => {
     // isNewUser: Boolean,
     user: [],
     classes: [],
+    student: [],
   });
 
   return <Provider value={[state, dispatch]} {...props} />;

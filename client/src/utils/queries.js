@@ -29,6 +29,11 @@ export const QUERY_STUDENT = gql`
       firstName
       lastName
       dateOfBirth
+      classes {
+        _id
+        name
+        date
+      }
     }
   }
 `;

@@ -9,14 +9,26 @@ const resolvers = {
       return await Class.find().populate('student');
     },
     student: async () => {
-      return await Student.find();
+      return await Student.find().populate('classes');
     },
     user: async (parent, args, context) => {
       if (context.user) {
-        const user = await User.findById(context.user._id).populate({
-          path: 'children',
-          populate: 'children'
-        });
+        const user = await User.findById(context.user._id)
+        
+        // .populate({
+        //   path: 'children',
+        //   populate: 'children'
+        // });
+
+        // Lily's solution
+        .populate('children')
+				.populate({ path:'children', populate: 'classes'});
+
+        // another purposed solution:
+        // .populate([{path: 'children',
+        //   populate: {
+        //     path: 'classes',
+        //   }},])
 
         return user;
       }
@@ -44,6 +56,8 @@ const resolvers = {
     enrolStudent: async (parent, args) => {
       // enrol a student to a class
       const updatedClass = await Class.findByIdAndUpdate(args.classId,  { $push: { student: args.studentId },  new: true });
+
+      const student = await Student.findByIdAndUpdate(args.studentId,  { $push: { classes: args.classId },  new: true });
 
       return updatedClass;
     },

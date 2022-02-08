@@ -56,7 +56,7 @@ function Signup(props) {
                 name="firstName"
                 type="text"
                 onChange={handleChange}
-                required pattern="[a-zA-Z0-9\s]+"
+                required pattern="[a-zA-Z\s]+"
               />
               </label>
             </div>
@@ -68,7 +68,7 @@ function Signup(props) {
                   name="lastName"
                   type="text"
                   onChange={handleChange}
-                  required pattern="[a-zA-Z0-9\s]+"
+                  required pattern="[a-zA-Z\s]+"
                 />
               </label>
             </div>

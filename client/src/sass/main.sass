@@ -1,10 +1,9 @@
 @import 'base/reset'
 // Sass style reset
 
+@import '~foundation-sites/scss/util/mixins'
 @import '~bootstrap/scss/bootstrap'
 @import 'base/base'
-
-@import '~foundation-sites/scss/util/mixins'
 
 // import abstracts
 @import 'abstracts/variables'
@@ -24,10 +23,6 @@
 @import 'pages/login'
 @import 'pages/signup'
 
-form
-  // @include absolute-center
-  // align-content: center
-
 .page__header
   margin-bottom: 2rem
   border-bottom-style: solid
@@ -40,6 +35,9 @@ form
   border-width: 0.1rem
   border-bottom-color: $dusk
   // width:45%
+
+.section__card
+  margin-top: 4rem
 
 .section__image
   width:25%
@@ -98,7 +96,7 @@ a
     width: 45%
   
 .card-title
-  margin: 2rem
+  margin: 0.3rem
   padding: 1rem
 
 .ReactModal__Overlay 
@@ -125,7 +123,12 @@ a
   background: rgba(231,112,0,0.7)
 
 .home__card__title
-  margin-bottom: 0.3rem
+  margin: 2rem
   border-bottom-style: solid
   border-width: 0.1rem
 
+.card-text
+  margin: 1rem
+
+.class__icon
+  margin: 0.3em

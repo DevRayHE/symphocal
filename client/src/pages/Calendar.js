@@ -12,7 +12,7 @@ import moment from 'moment';
 
 import schoolLogo from '../assets/images/logo.png';
 import JitterbugsLogo from '../assets/images/ism_ryde_jitterbugs_logo.jpg';
-import BeeboppersLogo from '../assets/images/beebopper-logo.jpg';
+import BeeboppersLogo from '../assets/images/beebopper-logo-resized.jpg';
 import PianoramaJuniorLogo from '../assets/images/ism_ryde_pianorama_course_logo_Junior.gif';
 import PianoramaPrimaryLogo from '../assets/images/ism_ryde_pianorama_course_logo_Primary.gif';
 import PianoramaExtensionLogo from '../assets/images/ism_ryde_pianorama_course_logo_Extension.gif';
@@ -71,7 +71,6 @@ const Calendar = () => {
       default:
         return schoolLogo;
     }
-      
   }
 
   const renderByClassName = (className) => {
@@ -86,7 +85,7 @@ const Calendar = () => {
       </header>
       <img className="section__image" src={getLogoSrc(className)}/> */}
 
-      <div className="card mb-3">
+      <div className="card mb-3 section__card">
         <div className="row g-0">
           <div className="col-md-4">
             <img src={getLogoSrc(className)} className="img-fluid rounded-start" alt={className}/>
@@ -95,9 +94,9 @@ const Calendar = () => {
             <div className="card-body">
               {/* <h3 className="card-title"> */}
               <header className="section__header">
-              <h3 className="text-center card-title">
+              <h2 className="text-center card-title fw-bold">
               {className}
-              </h3>
+              </h2>
               </header>
               {/* </h3> */}
               {filteredClass[0]? <p className="card-text">{filteredClass[0].description}</p> : <></> }
@@ -123,7 +122,7 @@ const Calendar = () => {
   return (
     <div className="grid-container calendar">
       <header className="page__header">
-        <h2 className="text-center">Calendar</h2>
+        <h1 className="text-center fw-bold">Calendar</h1>
       </header>
 
       {classes 
