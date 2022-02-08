@@ -26,9 +26,22 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 }
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
-});
+
+// Original: 
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../client/build/index.html'));
+// });
+
+
+// Solution from github
+app.set('appPath', 'public');
+app.use(express.static(__dirname +'/public'));
+
+app.route('/*')
+  .get(function(req, res) {
+    res.sendFile(app.get('appPath') + '/index.html');
+  });
+// 
 
 db.once('open', () => {
   app.listen(PORT, () => {
