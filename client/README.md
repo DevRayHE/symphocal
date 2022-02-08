@@ -61,6 +61,7 @@
 ## Installation
 
 [Link to this repo url](https://github.com/DevRayHE/symphocal)
+
 [Deployed site on heroku](https://shrouded-woodland-70359.herokuapp.com/)
 
 Follow the steps below to install: 
