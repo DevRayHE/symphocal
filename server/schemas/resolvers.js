@@ -21,8 +21,11 @@ const resolvers = {
         // });
 
         // Lily's solution
-        .populate('children')
-				.populate({ path:'children', populate: 'classes'});
+        // .populate('children')
+				// .populate({ path:'children', populate: 'classes'});
+
+        //Thank you Ben!
+        .populate({ path: "children", populate: { path: "classes" } });
 
         // another purposed solution:
         // .populate([{path: 'children',

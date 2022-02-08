@@ -13,6 +13,7 @@ const Student = ({
   firstName,
   lastName,
   dateOfBirth,
+  classes,
   classId
 }) => {
 
@@ -21,36 +22,37 @@ const Student = ({
     refetchQueries: [
       {query: QUERY_ALL_CLASSES},
       {query: QUERY_USER},
+      {query: QUERY_STUDENT},
     ],
   });
 
-  const [ state, dispatch ] = useAppContext();
+  // const [ state, dispatch ] = useAppContext();
 
-  const { classes, user, student } = state;
+  // const { classes, user, student } = state;
 
-  // console.log("state classes:" + state.classes)
-  console.log(classes);
+  // // console.log("state classes:" + state.classes)
+  // console.log(classes);
   
-  console.log(user);
-  // console.log("user:" + user.firstName);
+  // console.log(user);
+  // // console.log("user:" + user.firstName);
 
-  const { loading, data: studentData} = useQuery(QUERY_STUDENT);
+  // const { loading, data: studentData} = useQuery(QUERY_STUDENT);
   
-  useEffect(() => {
-    if (studentData) {
-      dispatch({
-        type: UPDATE_STUDENT_STATE,
-        student: studentData.student,
-      })
-    } 
-  }, [studentData, loading, dispatch]); 
+  // useEffect(() => {
+  //   if (studentData) {
+  //     dispatch({
+  //       type: UPDATE_STUDENT_STATE,
+  //       student: studentData.student,
+  //     })
+  //   } 
+  // }, [studentData, loading, dispatch]); 
 
   console.log(firstName + age);
   console.log("classID within Student component: " + classId);
 
-  if (studentData) {
-    console.log(studentData)
-    console.log(studentData.student)
+  if (classes) {
+    console.log(classes)
+    // console.log(classes.student)
   }
   
 
@@ -96,12 +98,28 @@ const Student = ({
     </div>
 
     <div className="card-footer">
-      {classId 
-                  ?
-                  <button onClick={() => {enrolStudent()}}>Enroll</button>
-                  :
-                  <Link to="/Calendar"><button>Enroll</button></Link>
-                  }
+      {
+        classes[0]
+        ?
+        <p>Already enrolled</p>
+        :
+        <>
+        {classId
+          ?
+          <button onClick={() => {enrolStudent()}}>Enroll</button>
+          :
+          <Link to="/Calendar"><button>Enroll</button></Link>
+          }
+        </>
+      }
+
+      {/* {classId
+                ?
+                <button onClick={() => {enrolStudent()}}>Enroll</button>
+                :
+                <Link to="/Calendar"><button>Enroll</button></Link>
+                } */}
+      
     </div>
     </div>
   );

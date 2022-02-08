@@ -52,6 +52,11 @@ export const QUERY_USER = gql`
         firstName
         lastName
         dateOfBirth
+        classes {
+          _id
+          name
+          date
+        }
       }
     }
   }

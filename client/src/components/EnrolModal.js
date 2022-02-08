@@ -64,6 +64,7 @@ const EnrolModal = ({
           lastName = {eachChild.lastName}
           dateOfBirth = {eachChild.dateOfBirth}
           classId = {classId}
+          classes = {eachChild.classes}
           key={eachChild._id}/>) 
         : 
         <>
