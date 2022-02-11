@@ -13,7 +13,7 @@ const EnrolModal = ({
   const [ state, dispatch ] = useAppContext();
   const { user } = state;
 
-  let userAndClassId = {user, classId}
+  // let userAndClassId = {user, classId}
 
   const customStyles = {
     content: {

@@ -3,10 +3,13 @@ import React, {useEffect} from "react";
 import { Link } from "react-router-dom";
 import { QUERY_ALL_CLASSES, QUERY_USER, QUERY_STUDENT } from '../utils/queries';
 import { ENROL_STUDENT } from '../utils/mutations';
-import { useAppContext } from '../utils/GlobalState';
 import { useQuery, useMutation } from '@apollo/client';
-import { UPDATE_STUDENT_STATE } from '../utils/actions';
 import moment from 'moment';
+
+
+// import { useAppContext } from '../utils/GlobalState';
+// import { UPDATE_STUDENT_STATE } from '../utils/actions';
+
 
 const Student = ({
   _id,
@@ -22,7 +25,7 @@ const Student = ({
     refetchQueries: [
       {query: QUERY_ALL_CLASSES},
       {query: QUERY_USER},
-      {query: QUERY_STUDENT},
+      // {query: QUERY_STUDENT},
     ],
   });
 
@@ -47,11 +50,14 @@ const Student = ({
   //   } 
   // }, [studentData, loading, dispatch]); 
 
-  console.log(firstName + age);
-  console.log("classID within Student component: " + classId);
+  // console.log(firstName + age);
+  // console.log("classID within Student component: " + classId);
 
-  if (classes) {
-    console.log(classes)
+  let enrolledClass = "";
+
+  if (classes[0]) {
+    // console.log(classes[0])
+    enrolledClass = classes[0].name + " " + classes[0].date + " " + classes[0].startTime
     // console.log(classes.student)
   }
   
@@ -64,6 +70,10 @@ const Student = ({
 
       const newClassData = mutationResponse;
       console.log(newClassData);
+
+      if (newClassData) {
+        window.location.assign('./Profile');
+      }
     } catch (e) {
       console.log(e);
     }
@@ -101,7 +111,7 @@ const Student = ({
       {
         classes[0]
         ?
-        <p>Already enrolled</p>
+        <p className="student__enrolled__text fw-bold">Enrolled to {enrolledClass}</p>
         :
         <>
         {classId

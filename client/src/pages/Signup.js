@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { CREATE_USER } from '../utils/mutations';
-import { TOGGLE_SIGNUP } from '../utils/actions';
 import { useAppContext } from '../utils/GlobalState';
 
 function Signup(props) {

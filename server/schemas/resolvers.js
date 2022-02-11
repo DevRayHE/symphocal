@@ -1,7 +1,7 @@
 const { User, Student, Class } = require('../models');
 const { signToken } = require('../utils/auth');
 const { AuthenticationError } = require('apollo-server-express');
-const { UPDATE_USER } = require('../../client/src/utils/mutations');
+// const { UPDATE_USER } = require('../../client/src/utils/mutations');
 
 const resolvers = {
   Query: {

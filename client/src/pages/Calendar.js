@@ -1,14 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useQuery, useMutation } from '@apollo/client';
-import { Link } from 'react-router-dom';
 import { QUERY_ALL_CLASSES, QUERY_STUDENT, QUERY_USER } from '../utils/queries';
 import { UPDATE_CLASS_STATE, UPDATE_USER_STATE } from '../utils/actions';
 import { useAppContext } from '../utils/GlobalState';
 import Class from '../components/Class';
-import EnrolModal from '../components/EnrolModal';
-import Student from '../components/Student';
-import Modal from 'react-modal';
-import moment from 'moment';
 
 import schoolLogo from '../assets/images/logo.png';
 import JitterbugsLogo from '../assets/images/ism_ryde_jitterbugs_logo.jpg';
@@ -24,9 +19,9 @@ const Calendar = () => {
   const { classes, user } = state;
 
   // console.log("state classes:" + state.classes)
-  console.log(classes);
+  // console.log(classes);
   
-  console.log(user);
+  // console.log(user);
   // console.log("user:" + user.firstName);
 
   const { loading, data: classData} = useQuery(QUERY_ALL_CLASSES);

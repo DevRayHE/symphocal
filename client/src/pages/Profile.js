@@ -36,7 +36,7 @@ const Profile = () => {
 
   }, [userData, loading, dispatch]);
 
-  console.log("userData: " + userData);
+  // console.log("userData: " + userData);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -73,7 +73,7 @@ const Profile = () => {
       ...formState,
       [name]: value,
     });
-    console.log(name + value);
+    // console.log(name + value);
   };
 
   const addChildForm = () => {

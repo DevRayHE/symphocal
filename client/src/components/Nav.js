@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, MenuItem } from 'react-foundation';
 
 const Nav = () => {
 	// Taking currentPage and setPageChange props from Header, which is From MainContainer, to set current display page
@@ -91,59 +90,5 @@ const Nav = () => {
 	);
 };
 
-
-// const Nav = () => {
-// 	return (
-// 		// <div>
-// 		// <MenuItem>
-
-// 		// </MenuItem>
-
-// 		// <MenuItem>
-// 		// <Link
-// 		// className='nav-link'
-// 		// to="/Login" 
-// 		// >
-// 		// <h5>Login</h5>
-// 		// </Link>
-// 		// </MenuItem>
-
-// 		// <MenuItem>
-// 		// <Link
-// 		// className='nav-link'
-// 		// to="/Signup" 
-// 		// >
-// 		// <h5>Signup</h5>
-// 		// </Link>
-// 		// </MenuItem>
-
-// 		// <MenuItem>
-// 		// <Link
-// 		// className='nav-link'
-// 		// to="/Profile" 
-// 		// >
-// 		// <h5>Profile</h5>
-// 		// </Link>
-// 		// </MenuItem>
-
-// 		// <MenuItem>
-// 		// <Link
-// 		// className='nav-link'
-// 		// to="/Calendar" 
-// 		// >
-// 		// <h5>Calendar</h5>
-// 		// </Link>
-// 		// </MenuItem>
-// 		// </div>
-
-// 		<ul className="menu navbar align-center">
-// 			<li><Link className='nav-link' to="/" ><h5>Home</h5></Link></li>
-// 			<li><Link className='nav-link' to="/Login" ><h5>Login</h5></Link></li>
-// 			<li><Link className='nav-link' to="/Signup" ><h5>Signup</h5></Link></li>
-// 			<li><Link className='nav-link' to="/Profile" ><h5>Profile</h5></Link></li>
-// 			<li><Link className='nav-link' to="/Calendar" ><h5>Calendar</h5></Link></li>
-// 		</ul>
-// 	);
-// };
 
 export default Nav;
