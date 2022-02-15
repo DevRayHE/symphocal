@@ -54,7 +54,7 @@
 
 ### Here is a video to demonstrate 
 
-![Usage sample video.](./src/assets/images/Demophoto.jpg)
+![Usage sample video.](./client/src/assets/images/Demophoto.jpg)
 
  --- 
 
