@@ -6,11 +6,11 @@ const Nav = () => {
 	const [currentPage, setPageChange] = useState("Home");
 
 	return (
-		<nav className="navbar navbar-expand-sm">
+		<nav className="navbar navbar-expand-sm navbar-dark">
 			<div className="navbar__container container-fluid">
 				{/* Collapse navigate button on small size screen  */}
 				<button
-					className="navbar-toggler nav-button"
+					className="navbar-toggler"
 					type="button"
 					data-bs-toggle="collapse"
 					data-bs-target="#navbarCollapseToggler"
@@ -21,7 +21,7 @@ const Nav = () => {
 					<span className="navbar-toggler-icon"></span>
 				</button>
 
-				<div className="collapse navbar-collapse" id="navbarCollapseToggler">
+				<div className="collapse navbar-collapse navbar__collapse" id="navbarCollapseToggler">
 					<ul className="navbar-nav me-auto mb-2 mb-sm-0">
 						{/* <li className="nav-item">
 							<a className="nav-link active" aria-current="page" href="#home">
